@@ -38,7 +38,3 @@ func TestConcurrentReturnsZeroWhenNoElements(t *testing.T) {
 		t.Errorf("expected %d, was %d", expected, actual)
 	}
 }
-
-
-
-

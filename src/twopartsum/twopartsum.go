@@ -6,7 +6,7 @@ import (
 
 // sum the numbers in a and send the result on res.
 func sum(a []int, res chan<- int) {
-	
+
 	sum := 0
 	for _, v := range a {
 		sum += v
@@ -21,7 +21,8 @@ func ConcurrentSum(a []int) int {
 	go sum(a[:n/2], ch)
 	go sum(a[n/2:], ch)
 
-	return <-ch + <-ch 
+	// wait for the two goroutines to finish and return the sum
+	return <-ch + <-ch
 }
 
 func main() {
